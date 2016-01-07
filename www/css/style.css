@@ -1,0 +1,316 @@
+/* Empty. Add your own CSS if you like */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: #e6e6e6;
+}
+
+.main .card {
+  margin: 13px;
+  border-radius: 5px;
+}
+
+.tabs {
+  border-top: 1px solid #ddd !important;
+  padding-top: 6px;
+  height: 60px;
+  background-size: 100% 0px !important;
+}
+
+.card {
+  box-shadow: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.main .my-card {
+  /*margin-left: 20px;*/
+  /*margin-right: 20px;*/
+}
+
+.scroll-content {
+
+}
+
+.item {
+  /*border-color: #eee !important;*/
+  border: none;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+
+.bar.bar-stable {
+  border-bottom: 1px solid #ddd !important;
+}
+
+.button.button-assertive.activated {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.button-circle {
+  margin-top: 15px;
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50%;
+}
+
+.home-profile {
+  border: none;
+  box-shadow: none;
+}
+
+.qrcode-container {
+  width: 200px;
+  margin: 16px auto 40px;
+}
+
+.qrcode-container canvas {
+  border-radius: 3px;
+}
+
+.home-profile .item-avatar {
+  background-color: #f5f5f5;
+}
+
+.home-profile .item-body {
+
+}
+
+.short-profile {
+  margin-bottom: 40px;
+  background-color: #fff;
+  border: none;
+  padding: 16px;
+}
+
+.short-profile img {
+  border-radius: 5px;
+}
+
+.short-profile h2 {
+  margin: 15px 0 5px 0;
+}
+
+.profile-top .avatar {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.profile-top .avatar > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.profile-top .status {
+  position: absolute;
+  /*margin-top: 20px;*/
+  /*float: left;*/
+  /*margin-left: 30px;*/
+  left: 156px;
+  top: 16px;
+}
+
+.profile-top .status h3 {
+  margin-bottom: 10px;
+  font-size: 1.6em;
+}
+
+.profile-top .status p {
+  margin: 3px 0 0 0;
+  padding: 0;
+  color: #777;
+}
+
+.profile-group {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 16px;
+}
+
+.profile-group h4 {
+  font-size: 16px;
+  color: #777;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.list-item {
+  overflow: hidden;
+  position: relative;
+  margin: 0 10px;
+  padding: 0 5px;
+  border-bottom: 1px solid #eee;
+  height: 64px;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item .icon-box {
+  float: left;
+  width: 60px;
+  height: 64px;
+}
+
+.list-item .icon {
+  width: 24px;
+  height: 24px;
+  margin-top: 20px;
+}
+
+.list-item .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.list-item .desc-box {
+  position: absolute;
+  /*border: 1px solid #00d;*/
+  height: 64px;
+  line-height: 64px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 60px;
+}
+
+.list-item .desc-box p {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.button-group {
+  margin-top: 10px;
+  padding: 10px 30px;
+}
+
+.work {
+  /*border: 1px solid #c00 !important;*/
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.work h3 {
+  /*border: 1px solid #ccc;*/
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.work h3:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.work .corporation {
+  position: relative;
+}
+
+.work .logo {
+  float: right;
+  width: 68px;
+  height: 68px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.work .period,
+.work .position {
+  /*border: 1px solid #ccc;*/
+  margin: 0;
+  color: #777;
+}
+
+.last {
+  border-bottom: none !important;
+  margin-bottom: 0;
+}
+
+.first {
+  border-top: 1px solid #eee;
+}
+
+.card .item-avatar {
+  background: transparent;
+}
+
+.item-avatar h2 {
+  margin-top: 2px;
+}
+
+.item-talk-way {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.setting-item {
+  /*border: 1px solid #f00;*/
+  position: relative;
+}
+
+.setting-item .action-name {
+  /*font-size: 16px;*/
+}
+
+.setting-item .ion-chevron-right {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  font-size: 16px;
+  color: #ccc;
+  right: 3px;
+}
+
+.setting-item .ion-chevron-right:before {
+  display: block;
+  width: 32px;
+  text-align: center;
+}
+
+.setting-item .content {
+  position: absolute;
+  right: 36px;
+  top: 6px;
+}
+
+.content img {
+  border-radius: 3px;
+}
+
+.content .text {
+  margin-top: 11px;
+  /*background-color: #f00;*/
+}

@@ -1,0 +1,86 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{chat.name}}">
+  <ion-content class="main">
+
+    <div class="card short-profile">
+      <div class="profile-top">
+        <div class="avatar">
+          <img ng-src="{{chat.face}}">
+        </div>
+
+        <div class="status">
+          <h3>徐可</h3>
+
+          <p>现居南京</p>
+
+          <p>研发工程师</p>
+
+          <p>翼拍网络</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">联系方式</div>
+      <div class="item item-body item-talk-way">
+        <div class="list-item">
+          <div class="icon-box">
+            <div class="icon">
+              <img ng-src="{{chat.face}}">
+            </div>
+          </div>
+          <div class="desc-box">
+            <p>15600063221</p>
+          </div>
+        </div>
+
+        <div class="list-item">
+          <div class="icon-box">
+            <div class="icon">
+              <img ng-src="img/wx32.png">
+            </div>
+          </div>
+          <div class="desc-box">
+            <p>15600063221</p>
+          </div>
+        </div>
+
+        <div class="list-item">
+          <a href>
+            <div class="icon-box">
+              <div class="icon">
+                <img ng-src="img/qq32.png">
+              </div>
+            </div>
+            <div class="desc-box">
+              <p>15600063221</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="list-item" ng-click="openWeibo()">
+          <div class="icon-box">
+            <div class="icon">
+              <img ng-src="img/weibo32.png">
+            </div>
+          </div>
+          <div class="desc-box last">
+            <p>michael.hsu.ke@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <a class="button button-block button-balanced" href="#/tab/contact/{{chat.id}}/document">
+        查看档案
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>
