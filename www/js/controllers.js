@@ -148,11 +148,144 @@ angular.module('starter.controllers', [])
     };
   })
 
-  .controller('AccountCtrl', function ($scope) {
+  .controller('AccountCtrl', function ($scope, $ionicModal, $ionicActionSheet) {
     $scope.settings = {
       enableFriends: true
     };
-  })
-  .controller('AvatarCtrl', function ($scope) {
 
+    // 修改头像modal
+    $ionicModal.fromTemplateUrl('avatar-modal.html', function (modal) {
+      $scope.avatarModal = modal;
+    }, {
+      animation: 'fade-in'
+    });
+
+    // 修改自我简介modal
+    $ionicModal.fromTemplateUrl('self-introduction-modal.html', function (modal) {
+      $scope.selfIntroModal = modal;
+    }, {
+      animation: 'slide-in-up',
+      focusFirstInput: true
+    });
+
+    // 修改联系方式modal
+    $ionicModal.fromTemplateUrl('contact-information-modal.html', function (modal) {
+      $scope.contactInfoModal = modal;
+    }, {
+      animation: 'slide-in-up',
+      focusFirstInput: true
+    });
+
+    // 修改我的档案modal
+    $ionicModal.fromTemplateUrl('self-document-modal.html', function (modal) {
+      $scope.selfDocModal = modal;
+    }, {
+      animation: 'slide-in-up',
+      focusFirstInput: true
+    });
+
+    // =============================================
+
+    // 打开修改头像modal
+    $scope.openAvatarModal = function ($event) {
+      $event.stopPropagation();
+      $scope.avatarModal.show();
+    };
+
+    // 打开修改自我自我简介的modal
+    $scope.openSelfIntroModal = function () {
+      $scope.selfIntroModal.show();
+    };
+
+    // 打开修改联系方式modal
+    $scope.openContactInfoModal = function () {
+      $scope.contactInfoModal.show();
+    };
+
+    // 打开我的档案modal
+    $scope.openSelfDocModal = function () {
+      $scope.selfDocModal.show();
+    };
+
+    $scope.changePhoto = function () {
+      window.location.href = '#/tab/avatar';
+    };
+
+    $scope.showActionsheet = function () {
+      $ionicActionSheet.show({
+        //titleText: 'ActionSheet Example',
+        buttons: [
+          {
+            text: '从相册中选择'
+          },
+          {
+            text: '拍照'
+          },
+        ],
+        //destructiveText: 'Delete',
+        cancelText: '取消',
+        cancel: function () {
+          console.log('CANCELLED');
+        },
+        buttonClicked: function (index) {
+          console.log('BUTTON CLICKED', index);
+          if (index == 0) {
+            alert('从相册中选择');
+          } else if (index == 1) {
+            alert('拍照')
+          }
+          return true;
+        },
+        destructiveButtonClicked: function () {
+          console.log('DESTRUCT');
+          return true;
+        }
+      });
+    };
+  })
+  .controller('AvatarModalCtrl', function ($scope) {
+    //alert('ok');
+    $scope.closeAvatarModal = function () {
+      alert('ok');
+      $scope.modal.hide();
+    };
+  })
+  .controller('selfIntroModalCtrl', function ($scope) {
+    $scope.user = {};
+
+    // 更新自我简介
+    $scope.updateSelfIntro = function () {
+      alert($scope.user.selfIntroText);
+      $scope.modal.hide();
+    };
+
+  })
+  .controller('ContactInfoCtrl', function ($scope) {
+    // 联系人信息
+    $scope.contactInfo = {};
+
+    $scope.updateContactInfo = function () {
+      alert(JSON.stringify($scope.contactInfo));
+    }
+  })
+  .controller('SelfDocCtrl', function ($scope, $ionicModal) {
+
+    $ionicModal.fromTemplateUrl('doc-editor-modal.html', function (modal) {
+      $scope.openDocEditorModal = modal;
+    }, {
+      animation: 'fade-in',
+      focusFirstInput: true
+    });
+
+    $scope.openDocEditor = function () {
+      $scope.openDocEditorModal.show();
+      //$scope.modal.hide();
+      $scope.modal.hide();
+    };
+  })
+  .controller('SelfDocEditorCtrl', function ($scope) {
+
+    $scope.updateSelfDoc = function () {
+
+    };
   });

@@ -1,15 +1,15 @@
-<ion-view view-title="我">
+<ion-view view-title="我的">
   <ion-content class="main">
     <div class="card">
       <ion-list>
-        <ion-item class="setting-item" href="#/tab/avatar">
+        <ion-item class="setting-item" ng-click="showActionsheet()">
           <h3 class="action-name">头像</h3>
 
-          <div class="content"><img src="img/adam.jpg" height="40"></div>
+          <div class="content"><img src="img/adam.jpg" height="40" ng-click="openAvatarModal($event)"></div>
           <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
-        <ion-item class="setting-item">
-          <h3 class="action-name">个性签名</h3>
+        <ion-item class="setting-item" ng-click="openSelfIntroModal()">
+          <h3 class="action-name">自我介绍</h3>
 
           <div class="content"><p class="text">加个备注...</p></div>
           <i class="icon ion-chevron-right icon-accessory"></i>
@@ -19,12 +19,12 @@
 
     <div class="card">
       <ion-list>
-        <ion-item class="setting-item">
+        <ion-item class="setting-item" ng-click="openContactInfoModal()">
           <h3 class="action-name">联系方式</h3>
           <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
-        <ion-item class="setting-item">
-          <h3 class="action-name">个人档案</h3>
+        <ion-item class="setting-item" ng-click="openSelfDocModal()">
+          <h3 class="action-name">我的档案</h3>
           <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
         <ion-item class="setting-item">
@@ -56,11 +56,5 @@
         退出
       </a>
     </div>
-
-    <!--<ion-list>-->
-    <!--<ion-toggle  ng-model="settings.enableFriends">-->
-    <!--Enable Friends-->
-    <!--</ion-toggle>-->
-    <!--</ion-list>-->
   </ion-content>
 </ion-view>

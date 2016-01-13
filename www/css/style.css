@@ -272,6 +272,7 @@
 
 .setting-item .action-name {
   /*font-size: 16px;*/
+  margin-top: 2px;
 }
 
 .setting-item .ion-chevron-right {
@@ -304,6 +305,7 @@
   position: absolute;
   right: 36px;
   top: 6px;
+  z-index: 1000;
 }
 
 .content img {
@@ -314,3 +316,70 @@
   margin-top: 11px;
   /*background-color: #f00;*/
 }
+
+.search-box {
+  /*border: 1px solid #c00;*/
+  position: relative;
+  padding-left: 10px;
+  height: 42px;
+}
+
+.search-box input {
+  /*border: 1px solid #c00;*/
+  /*width: 90%;*/
+}
+
+.search-box button {
+  min-height: 20px !important;
+  line-height: 2;
+  border-radius: 50%;
+}
+
+.button.button-icon.input-button {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  color: #bbb;
+}
+
+/*begin --> action sheet style*/
+.platform-android .action-sheet-backdrop.active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.platform-android .action-sheet {
+  margin: 0;
+}
+
+.platform-android .action-sheet .action-sheet-title, .platform-android .action-sheet .button {
+  text-align: left;
+  border-color: transparent;
+  font-size: 16px;
+  color: inherit;
+}
+
+.platform-android .action-sheet .action-sheet-title {
+  font-size: 14px;
+  padding: 16px;
+  color: #666;
+}
+
+.platform-android .action-sheet .button.active, .platform-android .action-sheet .button.activated {
+  background: #e8e8e8;
+}
+
+.platform-android .action-sheet-group {
+  margin: 0;
+  border-radius: 0;
+  background-color: #fafafa;
+}
+
+.platform-android .action-sheet-cancel {
+  display: none;
+}
+
+.platform-android .action-sheet-has-icons .button {
+  padding-left: 56px;
+}
+/*end --> action sheet style*/

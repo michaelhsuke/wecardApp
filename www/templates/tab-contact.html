@@ -1,13 +1,26 @@
 <ion-view view-title="人际">
   <ion-content class="main">
-    <div class="card">
+    <div class="card search-box">
+      <input type="search"
+             placeholder="搜索联系人..."
+             ng-model="search"
+             ng-change="scrollTop()">
+      <button
+              class="button button-icon ion-android-close input-button"
+              ng-click="clearSearch()">
+      </button>
+    </div>
+    <div class="card list">
       <div class="item item-divider">
         A
       </div>
       <ion-list>
-        <ion-item class="item-remove-animate item-avatar item-icon-right" id="chat_item_{{chat.id}}" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/contact/{{chat.id}}">
+        <ion-item class="item-remove-animate item-avatar item-icon-right" id="chat_item_{{chat.id}}"
+                  ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/contact/{{chat.id}}">
           <img ng-src="{{chat.face}}">
+
           <h2>{{chat.name}}</h2>
+
           <p>{{chat.lastText}}</p>
           <i class="icon ion-chevron-right icon-accessory"></i>
 

@@ -45,5 +45,127 @@
   have templates inline in this html file if you'd like).
 -->
 <ion-nav-view></ion-nav-view>
+
+<script id="avatar-modal.html" type="text/ng-template">
+  <div class="modal image-modal transparent" ng-controller="AvatarModalCtrl" ng-click="modal.hide()">
+    <ion-scroll zooming="true">
+      <img src="img/adam.jpg" style="width:100%;"/>
+    </ion-scroll>
+  </div>
+</script>
+
+<script id="self-introduction-modal.html" type="text/ng-template">
+  <div class="modal" ng-controller="selfIntroModalCtrl">
+    <ion-header-bar class="bar bar-header bar-positive">
+      <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+      <h1 class="title">自我介绍</h1>
+      <button class="button button-clear button-primary" ng-click="updateSelfIntro()">保存</button>
+    </ion-header-bar>
+    <ion-content>
+      <div class="padding">
+        <div class="list">
+          <label class="item item-input">
+            <input ng-model="user.selfIntroText" id="selfIntroText" type="text" placeholder="请用一句话介绍自己">
+          </label>
+        </div>
+      </div>
+    </ion-content>
+  </div>
+</script>
+
+<script id="contact-information-modal.html" type="text/ng-template">
+  <div class="modal" ng-controller="ContactInfoCtrl">
+    <ion-header-bar class="bar bar-header bar-positive">
+      <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+      <h1 class="title">联系方式</h1>
+      <button class="button button-clear button-primary" ng-click="updateContactInfo()">保存</button>
+    </ion-header-bar>
+    <ion-content>
+      <div class="padding">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input ng-model="contactInfo.phone" type="text" placeholder="电话">
+          </label>
+          <label class="item item-input">
+            <input ng-model="contactInfo.wechat" type="text" placeholder="微信">
+          </label>
+          <label class="item item-input">
+            <input ng-model="contactInfo.qq" type="text" placeholder="QQ">
+          </label>
+          <label class="item item-input">
+            <input ng-model="contactInfo.email" type="text" placeholder="邮箱">
+          </label>
+        </div>
+      </div>
+    </ion-content>
+  </div>
+</script>
+
+<script id="self-document-modal.html" type="text/ng-template">
+  <div class="modal" ng-controller="SelfDocCtrl">
+    <ion-header-bar class="bar bar-header bar-positive">
+      <button class="button button-clear button-primary" ng-click="modal.hide()">返回</button>
+      <h1 class="title">我的档案</h1>
+      <button class="button button-clear button-primary" ng-click="openDocEditor()">编辑</button>
+    </ion-header-bar>
+    <ion-content class="main">
+      <div class="card">
+        <div class="item item-divider">工作经历</div>
+        <div class="item item-body">
+          <div class="work" ng-click="openLink()">
+            <h3>研发工程师</h3>
+
+            <div class="logo">
+              <img src="img/t.jpg">
+            </div>
+
+            <div class="corporation">
+              <p class="position">翼拍网络</p>
+
+              <p class="period">2015年八月 - 现在</p>
+            </div>
+
+            <div class="desc">
+              <p>美国智库东西方研究所的网络政策专家格雷格·奥斯汀说，习主席的讲话极其重要，其中最重要的一点是，在网络安全方面没有哪个国家能独善其身。</p>
+            </div>
+          </div>
+
+          <div class="work last">
+            <h3>研发工程师</h3>
+
+            <div class="logo">
+              <img src="img/one+.png">
+            </div>
+
+            <div class="corporation">
+              <p class="position">翼拍网络</p>
+
+              <p class="period">2015年八月 - 现在</p>
+            </div>
+
+            <div class="desc">
+              <p>美国智库东西方研究所的网络政策专家格雷格·奥斯汀说，习主席的讲话极其重要，其中最重要的一点是，在网络安全方面没有哪个国家能独善其身。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </div>
+</script>
+
+<script id="doc-editor-modal.html" type="text/ng-template">
+  <div class="modal" ng-controller="SelfDocEditorCtrl">
+    <ion-header-bar class="bar bar-header bar-positive">
+      <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+      <h1 class="title">我的档案</h1>
+      <button class="button button-clear button-primary" ng-click="updateSelfDoc()">保存</button>
+    </ion-header-bar>
+    <ion-content>
+        <h3>档案编辑</h3>
+    </ion-content>
+  </div>
+</script>
+
+
 </body>
 </html>
