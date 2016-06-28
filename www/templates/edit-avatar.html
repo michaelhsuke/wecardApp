@@ -1,0 +1,41 @@
+<ion-view hide-tab-bar>
+    <ion-header-bar align-title="center" class="bar-dark">
+        <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="backSettings()"></button>
+        <h1 class="title">我的头像</h1>
+    </ion-header-bar>
+    <ion-content>
+        <!--我的头像-->
+        <div class="padding text-center">
+            <div class="contact-avatar">
+                <p>当前头像：</p>
+                <img ng-src="img/ben.png" alt="avatar" width="200px"/>
+            </div>
+
+            <div class="upload-container">
+                <!--<div ng-show="imageCropStep == 1">-->
+                <div>
+                    <div class="avatar-box">
+                        <div class="btn-upload">
+                            <input type="file" class="file-upload" name="fileInput" id="fileInput"
+                                   onchange="angular.element(this).scope().fileChanged(event)" id="fileInput"/>
+                            上传
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="imageCropStep == 2" class="avatar-crop-container" data-step="{{imageCropStep}}">
+                    <image-crop
+                            data-height="{{windowHeight}}"
+                            data-width="{{windowWidth}}"
+                            data-shape="square"
+                            data-step="imageCropStep"
+                            src="imgSrc"
+                            data-result="result"
+                            data-result-blob="resultBlob"
+                            crop="initCrop"
+                            padding="20"
+                            max-size="10000000"></image-crop>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

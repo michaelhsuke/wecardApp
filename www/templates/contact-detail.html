@@ -1,86 +1,112 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-<ion-view view-title="{{chat.name}}">
-  <ion-content class="main">
-
-    <div class="card short-profile">
-      <div class="profile-top">
-        <div class="avatar">
-          <img ng-src="{{chat.face}}">
-        </div>
-
-        <div class="status">
-          <h3>徐可</h3>
-
-          <p>现居南京</p>
-
-          <p>研发工程师</p>
-
-          <p>翼拍网络</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-divider">联系方式</div>
-      <div class="item item-body item-talk-way">
-        <div class="list-item">
-          <div class="icon-box">
-            <div class="icon">
-              <img ng-src="{{chat.face}}">
+<ion-view view-title="{{chat.name}}" hide-tab-bar>
+    <ion-header-bar align-title="center" class="bar-dark">
+        <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="backContactList()"></button>
+        <h1 class="title">{{chat.name}}</h1>
+    </ion-header-bar>
+    <ion-content>
+        <!--头像-->
+        <div class="card text-center">
+            <div class="contact-avatar">
+                <img ng-src="{{contactInfo.avatar}}" alt="avatar" class="img-circle" width="120px"/>
             </div>
-          </div>
-          <div class="desc-box">
-            <p>15600063221</p>
-          </div>
+            <h3>{{contactInfo.name}}</h3>
+            <div class="contact-desc" ng-show="contactInfo.intro">
+                <p>{{contactInfo.intro}}</p>
+            </div>
+            <div class="">
+                <button class="button button-small button-positive button-more-padding"><i class="icon ion-compose"></i>&nbsp;评价</button>
+            </div>
+
         </div>
 
-        <div class="list-item">
-          <div class="icon-box">
-            <div class="icon">
-              <img ng-src="img/wx32.png">
+        <!--联系方式-->
+        <div class="list custom-list padding">
+            <div class="item item-divider">
+                <strong><i class="icon ion-at"></i>&nbsp;联系方式</strong>
             </div>
-          </div>
-          <div class="desc-box">
-            <p>15600063221</p>
-          </div>
+            <div class="item basic-info-item item-button-right" ng-repeat="contactItem in contactInfo.contacts">
+                <label>{{contactItem.desc}}</label>
+                {{contactItem.account}}
+                <button class="button button-clear button-balanced">
+                    <i class="icon {{contactItem.icon}}"></i>
+                </button>
+            </div>
         </div>
 
-        <div class="list-item">
-          <a href>
-            <div class="icon-box">
-              <div class="icon">
-                <img ng-src="img/qq32.png">
-              </div>
+        <!--基本信息-->
+        <div class="list custom-list padding" ng-show="contactInfo.basic">
+            <div class="item item-divider">
+                <strong><i class="icon ion-person"></i>&nbsp;基本资料</strong>
             </div>
-            <div class="desc-box">
-              <p>15600063221</p>
+
+            <div class="item basic-info-item text-positive" ng-repeat="basicItem in contactInfo.basic">
+                <label class="">{{basicItem.title}}</label><span
+                    class="font-sm font-gray">{{basicItem.val}}</span>
             </div>
-          </a>
         </div>
 
-        <div class="list-item" ng-click="openWeibo()">
-          <div class="icon-box">
-            <div class="icon">
-              <img ng-src="img/weibo32.png">
-            </div>
-          </div>
-          <div class="desc-box last">
-            <p>michael.hsu.ke@gmail.com</p>
-          </div>
+        <div class="item no-border">
+            <a class="button button-block button-balanced icon ion-document-text"
+               href="#/tab/contact/{{chat.id}}/document">
+                &nbsp;查看档案
+            </a>
         </div>
-      </div>
-    </div>
 
-    <div class="button-group">
-      <a class="button button-block button-balanced" href="#/tab/contact/{{chat.id}}/document">
-        查看档案
-      </a>
-    </div>
+        <div class="list list-background-white padding-top-list">
+            <div class="item no-border">
+                <strong>联系方式</strong>
+            </div>
+            <div class="list-item no-border">
+                <div class="icon-box">
+                    <div class="icon">
+                        <img ng-src="{{chat.face}}">
+                    </div>
+                </div>
+                <div class="desc-box">
+                    <p>15600063221</p>
+                </div>
+            </div>
 
-  </ion-content>
+            <div class="list-item no-border">
+                <div class="icon-box">
+                    <div class="icon">
+                        <img ng-src="img/wx32.png">
+                    </div>
+                </div>
+                <div class="desc-box">
+                    <p>15600063221</p>
+                </div>
+            </div>
+
+            <div class="list-item no-border">
+                <a href>
+                    <div class="icon-box">
+                        <div class="icon">
+                            <img ng-src="img/qq32.png">
+                        </div>
+                    </div>
+                    <div class="desc-box">
+                        <p>15600063221</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="list-item no-border" ng-click="openWeibo()">
+                <div class="icon-box">
+                    <div class="icon">
+                        <img ng-src="img/weibo32.png">
+                    </div>
+                </div>
+                <div class="desc-box">
+                    <p>michael.hsu.ke@gmail.com</p>
+                </div>
+            </div>
+            <div class="item no-border">
+                <a class="button button-block button-balanced button-clear icon ion-document-text"
+                   href="#/tab/contact/{{chat.id}}/document">
+                    查看档案
+                </a>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>

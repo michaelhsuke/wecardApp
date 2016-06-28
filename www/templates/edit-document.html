@@ -1,0 +1,86 @@
+<ion-view view-title="档案" hide-tab-bar>
+    <ion-header-bar align-title="center" class="bar-dark">
+        <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="backSettings()"></button>
+        <h1 class="title">个人档案</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list padding" ng-show="works">
+            <div class="item item-divider">
+                <strong>工作经历</strong>
+                <button class="button button-clear button-positive" ng-click="changeWorksEditable()">
+                    <i class="icon ion-compose" ng-show="!worksEditable">&nbsp;编辑</i>
+                    <i class="icon ion-ios-cloud-upload-outline" ng-show="worksEditable">&nbsp;完成</i>
+                </button>
+            </div>
+            <div class="item item-body">
+                <div class="work" ng-repeat="workItem in works">
+                    <p ng-show="worksEditable" class="clearfix">
+                        <button class="button button-small button-more-padding button-positive" ng-click="changeWorkEditableArr('{{$index}}')">
+                            <span ng-show="!workEditableArr['{{$index}}']"><i class="icon ion-compose"></i> &nbsp;编辑</span>
+                            <span ng-show="workEditableArr['{{$index}}']"><i class="icon ion-ios-cloud-upload-outline"></i> &nbsp;保存</span>
+                        </button>
+                        <button class="button button-small button-more-padding button-assertive"><i class="icon ion-ios-trash"></i> &nbsp;删除</button>
+                    </p>
+                    <div ng-show="!workEditableArr['{{$index}}']">
+                        <h3>{{workItem.title}}</h3>
+                        <div class="logo">
+                            <img ng-src="{{workItem.logo}}">
+                        </div>
+                        <div class="corporation">
+                            <p class="position">{{workItem.company}}</p>
+                            <p class="period">{{workItem.startDate}} - {{workItem.endDate}}</p>
+                        </div>
+
+                        <div class="desc">
+                            <p>{{workItem.desc}}</p>
+                        </div>
+                    </div>
+
+                    <div ng-show="workEditableArr['{{$index}}']">
+                        <div class="item edit-doc-item">
+                            <label>公司</label>
+                            <div class="profile-input-group">
+                                <input type="text" ng-model="workItem.company" class="profile-input"/>
+                                <span class="del-profile-input" ng-show="workItem.company" ng-click="workItem.company=''">&times;</span>
+                            </div>
+                        </div>
+
+                        <div class="item edit-doc-item">
+                            <label>职位</label>
+                            <div class="profile-input-group">
+                                <input type="text" ng-model="workItem.title" class="profile-input"/>
+                                <span class="del-profile-input" ng-show="workItem.title" ng-click="workItem.title=''">&times;</span>
+                            </div>
+                        </div>
+
+                        <div class="item edit-doc-item">
+                            <label>入职时间</label>
+                            <div class="profile-input-group">
+                                <input type="text" ng-model="workItem.startDate" class="profile-input"/>
+                                <span class="del-profile-input" ng-show="workItem.startDate" ng-click="workItem.startDate=''">&times;</span>
+                            </div>
+                        </div>
+
+                        <div class="item edit-doc-item">
+                            <label>离职时间</label>
+                            <div class="profile-input-group">
+                                <input type="text" ng-model="workItem.endDate" class="profile-input"/>
+                                <span class="del-profile-input" ng-show="workItem.endDate" ng-click="workItem.endDate=''">&times;</span>
+                            </div>
+                        </div>
+
+                        <div class="item edit-doc-item">
+                            <label>工作评价</label>
+                            <div  class="profile-input-group">
+                                <textarea type="text" ng-model="workItem.desc" class="profile-input" rows="5"> </textarea>
+                                <span class="del-profile-input" ng-show="workItem.desc" ng-click="workItem.desc=''">&times;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-add-document-container text-center" ng-show="worksEditable"><button class="button button-small button-more-padding button-balanced"><i class="icon ion-plus"></i> &nbsp;添加</button> <br/></div>
+
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

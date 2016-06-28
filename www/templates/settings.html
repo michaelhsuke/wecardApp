@@ -1,0 +1,64 @@
+<ion-view view-title="我">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <h1 class="title">我</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="padding">
+            <ul>
+                <li><h4>我的二维码</h4></li>
+            </ul>
+        </div>
+
+        <!--用户资料相关设置-->
+        <div class="padding">
+            <ion-list>
+                <ion-item class="item-icon-left item-icon-right font14" ng-click="gotoPage('tab.settings.editAvatar')">
+                    <i class="icon icon-right">
+                        <img class="list-menu-item-icon" src="img/ben.png">
+                    </i>修改头像
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+                <ion-item class="item-icon-left item-icon-right font14" ng-click="gotoPage('tab.settings.editProfile')">
+                    <i class="icon ion-person"></i>个人资料
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+                <ion-item class="item-icon-left item-icon-right font14" ng-click="gotoPage('tab.settings.editDocument')">
+                    <i class="icon icon ion-document-text"></i>
+                    我的档案
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+                <!--<ion-item class="item-icon-left item-icon-right font14" ng-click="openContactInfoModal()">-->
+                    <!--<i class="icon ion-printer"></i>-->
+                    <!--打印名片-->
+                    <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+                <!--</ion-item>-->
+            </ion-list>
+        </div>
+
+        <!--账户资料相关-->
+        <div class="padding">
+            <ion-list>
+                <ion-item class="item-icon-left item-icon-right font14" ng-click="openContactInfoModal()">
+                    <i class="icon ion-locked"></i>
+                    修改密码
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+                <ion-item class="item-icon-left item-icon-right font14" ng-click="openContactInfoModal()">
+                    <i class="icon ion-refresh"></i>
+                    检查新版本
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+                <ion-item class="item-icon-left item-icon-right font14" ng-click="openContactInfoModal()">
+                    <i class="icon ion-information"></i>
+                    关于开发者
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

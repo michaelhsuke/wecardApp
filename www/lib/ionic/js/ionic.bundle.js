@@ -40698,7 +40698,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
             controller: 'HomeController as home'
           });
           $routeProvider.when('/profile/:id', {
-            templateUrl: 'profile.html',
+            templateUrl: 'edit-profile.html',
             controller: 'ProfileController as profile'
           });
         }])
@@ -40737,7 +40737,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
         {{ record.title }}
       </a>
     </file>
-    <file name="profile.html">
+    <file name="edit-profile.html">
       <div class="profile record" ng-animate-ref="{{ profile.id }}">
         {{ profile.title }}
       </div>

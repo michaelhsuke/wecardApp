@@ -1,46 +1,27 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-<ion-view view-title="档案">
-  <ion-content class="main">
-    <div class="card">
-      <div class="item item-divider">工作经历</div>
-      <div class="item item-body">
-        <div class="work" ng-click="openLink()">
-          <h3>研发工程师</h3>
-          <div class="logo">
-            <img src="img/t.jpg">
-          </div>
+<ion-view view-title="档案" hide-tab-bar>
+    <ion-header-bar align-title="center" class="bar-dark">
+        <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="back2Parent()"></button>
+        <h1 class="title">个人档案</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list padding" ng-show="works">
+            <div class="item item-divider">工作经历</div>
+            <div class="item item-body">
+                <div class="work" ng-click="openLink()" ng-repeat="workItem in works">
+                    <h3>{{workItem.title}}</h3>
+                    <div class="logo">
+                        <img ng-src="{{workItem.logo}}">
+                    </div>
+                    <div class="corporation">
+                        <p class="position">{{workItem.company}}</p>
+                        <p class="period">{{workItem.startDate}} - {{workItem.endDate}}</p>
+                    </div>
 
-          <div class="corporation">
-            <p class="position">翼拍网络</p>
-            <p class="period">2015年八月 - 现在</p>
-          </div>
-
-          <div class="desc">
-            <p>美国智库东西方研究所的网络政策专家格雷格·奥斯汀说，习主席的讲话极其重要，其中最重要的一点是，在网络安全方面没有哪个国家能独善其身。</p>
-          </div>
+                    <div class="desc">
+                        <p>{{workItem.desc}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="work last">
-          <h3>研发工程师</h3>
-          <div class="logo">
-            <img src="img/one+.png">
-          </div>
-
-          <div class="corporation">
-            <p class="position">翼拍网络</p>
-            <p class="period">2015年八月 - 现在</p>
-          </div>
-
-          <div class="desc">
-            <p>美国智库东西方研究所的网络政策专家格雷格·奥斯汀说，习主席的讲话极其重要，其中最重要的一点是，在网络安全方面没有哪个国家能独善其身。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </ion-content>
+    </ion-content>
 </ion-view>

@@ -1,0 +1,57 @@
+<ion-view hide-tab-bar>
+    <ion-header-bar align-title="center" class="bar-dark">
+        <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="backSettings()"></button>
+        <h1 class="title">我的资料</h1>
+    </ion-header-bar>
+    <ion-content>
+        <!--联系方式-->
+        <div class="padding">
+            <ion-list class="list custom-list">
+                <ion-item class="item item-divider">
+                    <strong><i class="icon ion-at"></i>&nbsp;联系方式</strong>
+                    <button class="button button-clear button-positive" ng-click="changeContactsEditable()">
+                        <i class="icon ion-compose" ng-show="!contactsEditable">&nbsp;编辑</i>
+                        <i class="icon ion-ios-cloud-upload-outline" ng-show="contactsEditable">&nbsp;完成</i>
+                    </button>
+                </ion-item>
+                <ion-item class="item basic-info-item" ng-class="{'edit-profile-item': contactsEditable}"
+                          ng-hide="!contactsEditable && !contactItem.account"
+                          ng-repeat="contactItem in contactInfo.contacts">
+                    <label>{{contactItem.desc}}</label>
+                    <span ng-show="!contactsEditable">{{contactItem.account}}</span>
+
+                    <div ng-show="contactsEditable" class="profile-input-group">
+                        <input type="text" ng-model="contactItem.account" class="profile-input"/>
+                        <span class="del-profile-input" ng-show="contactItem.account"
+                              ng-click="contactItem.account=''">&times;</span>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
+
+        <!--基本信息-->
+        <div class="padding">
+            <ion-list class="list custom-list" ng-show="contactInfo.basic">
+                <ion-item class="item item-divider">
+                    <strong><i class="icon ion-person"></i>&nbsp;基本资料</strong>
+                    <button class="button button-clear button-positive" ng-click="changeBasicEditable()">
+                        <i class="icon ion-compose" ng-show="!basicEditable">&nbsp;编辑</i>
+                        <i class="icon ion-ios-cloud-upload-outline" ng-show="basicEditable">&nbsp;完成</i>
+                    </button>
+                </ion-item>
+
+                <ion-item class="item basic-info-item" ng-class="{'edit-profile-item': basicEditable}"
+                          ng-repeat="basicItem in contactInfo.basic">
+                    <label>{{basicItem.title}}</label>
+                    <span ng-show="!basicEditable">{{basicItem.val}}</span>
+
+                    <div ng-show="basicEditable" class="profile-input-group">
+                        <input type="text" ng-model="basicItem.val" class="profile-input"/>
+                        <span class="del-profile-input" ng-show="basicItem.val"
+                              ng-click="basicItem.val=''">&times;</span>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

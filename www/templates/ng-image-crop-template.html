@@ -1,0 +1,17 @@
+<div id="image-crop-{{ rand }}" class="ng-image-crop ng-image-crop--{{ shape }}" ng-style="moduleStyles"></h3>
+    <div class="" style="background-color: #444; padding: 0; margin: 0;">
+        <button class="button button-clear button-custom" style="display: block; float: left; color: #fff;" ng-click="addContactDone()">取消</button>
+        <button class="button button-clear button-custom" style="display: block; float: right; color: #fff;" ng-click="crop = true">确定</button>
+        <div style="clear: both"></div>
+    </div>
+    <section ng-style="sectionStyles" ng-show="step==1"></section>
+    <section ng-style="sectionStyles" ng-show="step==2">
+        <canvas class="cropping-canvas" width="{{canvasWidth}}" height="{{canvasHeight}}"
+                ng-mousemove="onCanvasMouseMove($event)" ng-mousedown="onCanvasMouseDown($event)"></canvas>
+        <div class="zoom-handle" ng-mousemove="onHandleMouseMove($event)" ng-mousedown="onHandleMouseDown($event)"
+             ng-mouseup="onHandleMouseUp($event)"></div>
+    </section>
+    <section ng-style="sectionStyles" class="image-crop-section-final" ng-show="step==3"><img class="image-crop-final"
+                                                                                              ng-src="{{ croppedDataUri }}"/>
+    </section>
+</div>

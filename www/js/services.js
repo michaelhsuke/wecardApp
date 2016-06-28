@@ -34,7 +34,6 @@ angular.module('starter.services', [])
         var q = $q.defer();
 
         navigator.camera.getPicture(function (result) {
-          // Do any magic you need
           q.resolve(result);
         }, function (err) {
           q.reject(err);
@@ -44,7 +43,6 @@ angular.module('starter.services', [])
       }
     }
   }])
-
   .factory('Chats', function () {
     // Might use a resource here that returns a JSON array
 
@@ -92,4 +90,33 @@ angular.module('starter.services', [])
         return null;
       }
     };
+  })
+  .factory('UserService', function () {
+    var userInfo = {
+      "id": 10000,
+      "username": "michaelhsuke",
+      "name": "徐可",
+      "company": "三六五",
+      "gender": 1,
+      "birthday": "1988-10-28",
+      "position": "PHP开发工程师",
+      "contacts": [
+        {"type": 1, "value": "15600063221"}, // 电话号码
+        {"type": 2, "value": "michaelhsuke"}, // 微信
+        {"type": 3, "value": "254182535"}, // QQ
+        {"type": 4, "value": "michael.hsu.ke@gmail.com"}  // 微博
+      ]
+    };
+
+    return {
+      getUser: function() {
+        return userInfo;
+      },
+      setUsername: function(_username) {
+        userInfo['username'] = _username;
+      },
+      getUsername: function() {
+        return userInfo['username'];
+      }
+    }
   });

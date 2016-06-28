@@ -1,0 +1,27 @@
+<ion-view title="weCard">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">用户名</span>
+        <input type="text" ng-model="user.username">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">密码</span>
+        <input type="password" ng-model="user.password">
+      </label>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="signIn(user)">
+        登录
+      </button>
+      <p class="text-center">
+        <a href="#/forgot-password">忘记密码</a>
+      </p>
+    </div>
+
+    <div style="width: 300px; height: 400px; border: 1px solid #f00; margin: 0 auto;" id="touch_pad">
+
+    </div>
+
+  </ion-content>
+</ion-view>

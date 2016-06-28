@@ -4,21 +4,22 @@ Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
-
-  <!-- Dashboard Tab -->
-  <ion-tab title="主屏" icon="ion-qr-scanner" href="#/tab/home">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
-  </ion-tab>
+  <!--<ion-tab title="通话记录" icon="ion-ios-clock" href="#/tab/callHistory">-->
+    <!--<ion-nav-view name="call-history"></ion-nav-view>-->
+  <!--</ion-tab>-->
 
   <!-- Chats Tab -->
-  <ion-tab title="人际" icon="ion-ios-people" href="#/tab/contact">
+  <ion-tab title="联系人" icon="ion-ios-people" href="#/tab/contact">
     <ion-nav-view name="tab-chats"></ion-nav-view>
   </ion-tab>
 
-  <!-- Account Tab -->
-  <ion-tab title="我的" icon-on="ion-ios-briefcase" icon-off="ion-ios-briefcase-outline" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
+   <!--Dashboard Tab-->
+  <ion-tab title="提醒" icon="ion-ios-bell" href="#/tab/home">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
-
+  <!-- Account Tab -->
+  <ion-tab title="我" icon="ion-ios-person" href="#/tab/settings">
+    <ion-nav-view name="settings"></ion-nav-view>
+  </ion-tab>
 </ion-tabs>

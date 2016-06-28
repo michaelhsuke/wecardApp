@@ -1,0 +1,73 @@
+<ion-view hide-tab-bar="">
+    <!--<ion-header-bar align-title="center" class="bar-dark" ng-show="imageCropStep != 2">-->
+        <!--<button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="backContacts()"></button>-->
+        <!--<h1 class="title">添加联系人</h1>-->
+        <!--<button class="button button-clear button-custom" ng-click="addContactDone()">完成</button>-->
+    <!--</ion-header-bar>-->
+    <ion-content ng-class="{'2': 'no-scroll'}[imageCropStep]">
+        <div align-title="center" class="bar-dark content-header clearfix" ng-show="imageCropStep != 2">
+            <button class="button button-clear icon ion-ios-arrow-back button-back pull-left"
+                    ng-click="backContacts()"></button>
+            <h1 class="title">添加联系人</h1>
+            <button class="button button-clear button-custom pull-right button-done" ng-click="addContactDone()">完成</button>
+        </div>
+
+        <div ng-show="imageCropStep == 1">
+            <div class="avatar-box">
+                <div class="btn-upload">
+                    <input type="file" class="file-upload" name="fileInput" id="fileInput"
+                           onchange="angular.element(this).scope().fileChanged(event)" id="fileInput"/>
+                    上传
+                </div>
+            </div>
+        </div>
+        <!--<div ng-show="imageCropStep == 2" class="avatar-crop-wrap">-->
+        <div ng-show="imageCropStep == 2" class="avatar-crop-container" data-step="{{imageCropStep}}">
+            <image-crop
+                    data-height="{{windowHeight}}"
+                    data-width="{{windowWidth}}"
+                    data-shape="square"
+                    data-step="imageCropStep"
+                    src="imgSrc"
+                    data-result="result"
+                    data-result-blob="resultBlob"
+                    crop="initCrop"
+                    padding="20"
+                    max-size="10000000"></image-crop>
+        </div>
+
+        <div class="list">
+            <label class="item item-input no-border item-input-padding-right-16">
+                <input type="text" placeholder="姓名" class="border-bottom">
+            </label>
+            <label class="item item-input no-border item-input-padding-right-16">
+                <input type="text" placeholder="公司" class="border-bottom">
+            </label>
+            <label class="item item-input no-border item-input-padding-right-16">
+                <input type="text" placeholder="职位" class="border-bottom">
+            </label>
+
+            <div class="item no-border">
+                <br/><br/>
+                <strong>联系方式</strong>
+            </div>
+            <label class="item item-input no-border item-input-padding-right-16">
+                <input type="text" placeholder="手机" class="border-bottom">
+            </label>
+            <label class="item item-input no-border item-input-padding-right-16">
+                <input type="text" placeholder="微信" class="border-bottom">
+            </label>
+            <label class="item item-input no-border item-input-padding-right-16">
+                <input type="text" placeholder="QQ" class="border-bottom">
+            </label>
+            <label class="item item-input no-border item-input-padding-right-16">
+                <input type="text" placeholder="邮箱" class="border-bottom">
+            </label>
+
+            <div class="item no-border">
+                <button class="button button-small button-clear icon ion-ios-plus-empty button-balanced font14">&nbsp;继续添加信息</button>
+            </div>
+            <br/><br/>
+        </div>
+    </ion-content>
+</ion-view>
