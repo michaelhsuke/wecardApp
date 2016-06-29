@@ -809,3 +809,8 @@ canvas {
 .qrcode-container h4 {
   margin-bottom: 15px;
 }
+
+.detail-qrcode {
+  color: #777;
+  font-size: 14px;
+}
