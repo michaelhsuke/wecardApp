@@ -4,19 +4,21 @@
   </ion-header-bar>
   <ion-content>
     <div class="padding">
-      <ion-list>
-        <ion-item class="item-image">
-
-        </ion-item>
-      </ion-list>
-      <ul>
-        <li><h4>我的二维码</h4></li>
-      </ul>
+      <div class="qrcode-container">
+        <h4>我的二维码</h4>
+        <span><qrcode version="5" error-correction-level="M" size="160" data="here comes qr!"></qrcode></span>
+      </div>
     </div>
 
     <!--用户资料相关设置-->
     <div class="padding">
       <ion-list>
+        <ion-item class="item-icon-left item-icon-right font14" ng-click="gotoPage('tab.settings.qrcodes')">
+          <i class="icon icon ion-document-text"></i>
+          二维码包
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+
         <ion-item class="item-icon-left item-icon-right font14" ng-click="gotoPage('tab.settings.editAvatar')">
           <i class="icon icon-right">
             <img class="list-menu-item-icon" src="img/ben.png">
@@ -34,6 +36,8 @@
           我的档案
           <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
+
+
 
         <!--<ion-item class="item-icon-left item-icon-right font14" ng-click="openContactInfoModal()">-->
         <!--<i class="icon ion-printer"></i>-->

@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['monospaced.qrcode'])
     .controller('HomeCtrl', function ($cordovaBarcodeScanner, $scope, Camera, QRScanService, $ionicModal, $ionicPopup, $timeout, $state) {
       console.log('show scope');
 

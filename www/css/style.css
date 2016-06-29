@@ -100,7 +100,7 @@
 
 .qrcode-container {
     width: 200px;
-    margin: 16px auto 40px;
+    margin: 16px auto 20px;
 }
 
 .qrcode-container canvas {
@@ -800,4 +800,12 @@ canvas {
   font-size: 12px;
   color: #777;
   margin-top: 0;
+}
+
+.qrcode-container {
+  text-align: center;
+}
+
+.qrcode-container h4 {
+  margin-bottom: 15px;
 }
