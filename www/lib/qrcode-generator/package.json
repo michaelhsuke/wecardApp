@@ -1,0 +1,12 @@
+{
+  "name": "qrcode-generator",
+  "version": "0.1.0",
+  "main": "js/qrcode.js",
+  "files": [
+    "js/qrcode.js",
+    "js/qrcode_UTF8.js",
+    "package.json"
+  ],
+  "_from": "qrcode-generator@https://github.com/monospaced/bower-qrcode-generator.git#v0.1.0",
+  "_resolved": "https://github.com/monospaced/bower-qrcode-generator.git#v0.1.0"
+}
