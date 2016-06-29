@@ -17,12 +17,15 @@
         A
       </div>
       <ion-list detect-events="">
-        <ion-item class="item-icon-left" id="chat_item_{{chat.id}}"
-                  ng-repeat="chat in chats | matchUsernameFilter:filterName" type="item-text-wrap" ng-click="goToDetail({{chat.id}}, $event)">
-          <i class="icon icon-right">
-            <img class="list-menu-item-icon" ng-src="{{chat.face}}">
-          </i>
-          {{chat.name}}
+        <ion-item class="item-avatar" id="chat_item_{{chat.id}}"
+                  ng-repeat="chat in chats | matchUsernameFilter:filterName" type="item-text-wrap"
+                  ng-click="goToDetail({{chat.id}}, $event)">
+          <img class="list-menu-item-icon" ng-src="{{chat.face}}">
+          <h2><strong>{{chat.name}}</strong></h2>
+          <p class="contact-simple-desc">
+            <span ng-show="chat.job">{{chat.job}}</span>
+            <span ng-show="chat.company">({{chat.company}})</span>
+          </p>
         </ion-item>
       </ion-list>
       <div class="item item-divider">

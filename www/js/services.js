@@ -51,27 +51,36 @@ angular.module('starter.services', [])
       id: 0,
       name: 'Ben Sparrow',
       lastText: 'You on your way?',
-      face: 'img/ben.png'
+      face: 'img/ben.png',
+      job: '研发工程师',
+      company: '百度'
     }, {
       id: 1,
       name: 'Max Lynx',
       lastText: 'Hey, it\'s me',
-      face: 'img/max.png'
+      face: 'img/max.png',
+      job: '产品经理',
+      company: '阿里'
     }, {
       id: 2,
       name: 'Adam Bradleyson',
       lastText: 'I should buy a boat',
-      face: 'img/adam.jpg'
+      face: 'img/adam.jpg',
+      job: '创始人',
+      company: ''
     }, {
       id: 3,
       name: 'Perry Governor',
       lastText: 'Look at my mukluks!',
-      face: 'img/perry.png'
+      face: 'img/perry.png',
+      job: 'CEO'
     }, {
       id: 4,
       name: 'Mike Harrington',
       lastText: 'This is wicked good ice cream.',
-      face: 'img/mike.png'
+      face: 'img/mike.png',
+      job: '公关',
+      company: '百度'
     }];
 
     return {

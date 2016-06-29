@@ -260,7 +260,7 @@ angular.module('starter.controllers', [])
           'title': '行业',
           'val': '计算机/互联网'
         }],
-        intro: '码农界的小学生',
+        intro: 'hello, where where',
         contacts: [
           {
             type: 1,
