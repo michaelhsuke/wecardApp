@@ -49,14 +49,14 @@ angular.module('starter.services', [])
     // Some fake testing data
     var chats = [{
       id: 0,
-      name: 'Ben Sparrow',
+      name: '张三',
       lastText: 'You on your way?',
       face: 'img/ben.png',
       job: '研发工程师',
       company: '百度'
     }, {
       id: 1,
-      name: 'Max Lynx',
+      name: '汉高谁',
       lastText: 'Hey, it\'s me',
       face: 'img/max.png',
       job: '产品经理',
