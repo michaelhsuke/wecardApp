@@ -521,7 +521,7 @@ angular.module('starter.controllers', ['monospaced.qrcode'])
       // above is test code
       $scope.signIn = function (user) {
         console.log('Sign-In', user);
-        $state.go('tab.home');
+        $state.go('tab.contact.list');
       };
     }])
     .controller('TabCtrl', function ($scope) {

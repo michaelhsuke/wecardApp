@@ -47,7 +47,7 @@ angular.module('starter.services', [])
     // Might use a resource here that returns a JSON array
 
     // Some fake testing data
-    var chats = [{
+    var contacts = [{
       id: 0,
       name: '张三',
       lastText: 'You on your way?',
@@ -56,7 +56,7 @@ angular.module('starter.services', [])
       company: '百度'
     }, {
       id: 1,
-      name: '汉高谁',
+      name: '韩某某',
       lastText: 'Hey, it\'s me',
       face: 'img/max.png',
       job: '产品经理',
@@ -85,15 +85,15 @@ angular.module('starter.services', [])
 
     return {
       all: function () {
-        return chats;
+        return contacts;
       },
       remove: function (chat) {
-        chats.splice(chats.indexOf(chat), 1);
+        contacts.splice(contacts.indexOf(chat), 1);
       },
       get: function (chatId) {
-        for (var i = 0; i < chats.length; i++) {
-          if (chats[i].id === parseInt(chatId)) {
-            return chats[i];
+        for (var i = 0; i < contacts.length; i++) {
+          if (contacts[i].id === parseInt(chatId)) {
+            return contacts[i];
           }
         }
         return null;
