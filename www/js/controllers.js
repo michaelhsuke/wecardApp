@@ -120,9 +120,7 @@ angular.module('starter.controllers', ['monospaced.qrcode'])
     // when they are recreated or on app start, instead of every page change.
     // To listen for when this page is active (for example, to refresh data),
     // listen for the $ionicView.enter event:
-    //
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
+
     $scope.filterName = '';
 
     $scope.matchUsers = function (userInfo, name) {
@@ -238,7 +236,20 @@ angular.module('starter.controllers', ['monospaced.qrcode'])
       Chats.remove(chat);
     };
   })
-  .controller('ContactDetailCtrl', function ($scope, $stateParams, Chats, $state) {
+  .controller('ContactDetailCtrl', ['$scope', '$stateParams', 'Chats', '$state', '$ionicModal', function ($scope, $stateParams, Chats, $state, $ionicModal) {
+
+    $ionicModal.fromTemplateUrl('templates/add-comment-modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.addCommentModal = modal;
+    });
+    // 添加评论功能
+    $scope.openAddCommentModal = function() {
+      alert('ok');
+      $scope.addCommentModal.show();
+    };
+
     $scope.chat = Chats.get($stateParams.chatId);
 
     // 联系人信息
@@ -294,7 +305,7 @@ angular.module('starter.controllers', ['monospaced.qrcode'])
       var ref = cordova.InAppBrowser.open('http://weibo.com', '_system', 'location=yes');
       alert(ref);
     };
-  })
+  }])
   .controller('ContactDocumentCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
     $scope.back2Parent = function () {
       $ionicHistory.goBack();
