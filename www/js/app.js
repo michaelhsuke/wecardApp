@@ -57,7 +57,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         url: '/alert',
         views: {
           'tab-alert': {
-            templateUrl: 'templates/tab-alert.html'
+            templateUrl: 'templates/tab-alert.html',
+            controller: 'AlertCtrl'
           }
         }
       })

@@ -5,18 +5,12 @@
 
   <ion-content class="padding">
     <ion-list>
-      <ion-item class="item-icon-left assertive">
-        <i class="icon fa fa-exchange"></i>
-        李四申请和你交换名片
-      </ion-item>
-      <ion-item class="item-icon-left positive  ">
-        <i class="icon fa fa-commenting"></i>
-        王五评论了锤子科技
-      </ion-item>
-      <ion-item class="item-icon-left">
-        <i class="icon fa fa-commenting"></i>
-        王五评论了锤子科技
-      </ion-item>
+      <div ng-repeat="alert in alerts">
+        <ion-item class="item-icon-left" ng-class="{'assertive': alert.type == 1 && alert.status == 1, 'positive': alert.type == 2 && alert.status == 1}">
+          <i class="icon fa" ng-class="{'fa-exchange': alert.type == 1, 'fa-user': alert.type == 2, 'fa-building-o': alert.type == 3}"></i>
+          {{alert.title}}
+        </ion-item>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>
