@@ -382,6 +382,11 @@ angular.module('starter.controllers', ['monospaced.qrcode'])
 
     console.dir($scope.alerts);  // todo
   }])
+  .controller('CommentUserCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
+    $scope.back = function() {
+      $ionicHistory.goBack();
+    }
+  }])
   .controller('AccountCtrl', function ($scope, $ionicModal, $ionicActionSheet, $state) {
     $scope.gotoPage = function (page) {
       $state.go(page);

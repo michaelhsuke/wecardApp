@@ -89,9 +89,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       .state('tab.contact-document', {
         url: '/contact/:chatId/document',
         views: {
-          'tab-chats': {
+          'tab-contact': {
             templateUrl: 'templates/contact-document.html',
             controller: 'ContactDocumentCtrl'
+          }
+        }
+      })
+      .state('tab.commentUser', {  // 评价用户
+        url: '/comment',
+        views: {
+          'tab-contact': {
+            templateUrl: 'templates/comment-user.html',
+            controller: 'CommentUserCtrl'
           }
         }
       })
