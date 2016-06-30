@@ -1,0 +1,16 @@
+<ion-view>
+  <ion-header-bar align-title="center" class="bar-dark">
+    <h1 class="title">提醒</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+    <ion-list>
+      <div ng-repeat="alert in alerts">
+        <ion-item class="item-icon-left" ng-class="{'assertive': alert.type == 1 && alert.status == 1, 'positive': alert.type == 2 && alert.status == 1}">
+          <i class="icon fa" ng-class="{'fa-exchange': alert.type == 1, 'fa-user': alert.type == 2, 'fa-building-o': alert.type == 3}"></i>
+          {{alert.title}}
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
