@@ -4,7 +4,11 @@
     <h1 class="title">大家对张三的评价</h1>
   </ion-header-bar>
 
-  <ion-content class="padding has-bottom">
+  <ion-content class="padding">
+    <div class="text-right margin-bottom-20">
+      <button class="button button-clear button-small"><i class="icon ion-thumbsup">&nbsp;</i>按赞同数排序</button>
+      <button class="button button-clear button-small"><i class="icon ion-ios-clock-outline">&nbsp;</i>按时间排序</button>
+    </div>
     <ion-list>
       <ion-item class="item-body" ng-repeat="comment in comments">
         <p>{{comment.date}}</p>

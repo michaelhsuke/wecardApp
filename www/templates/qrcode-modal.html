@@ -1,0 +1,13 @@
+<div class="modal" ng-controller="ContactInfoCtrl">
+  <ion-header-bar class="bar bar-header bar-dark">
+    <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="closeQRCodeModal()"></button>
+    <h1 class="title">张三的二维码</h1>
+  </ion-header-bar>
+  <div class="padding">
+    <div class="list margin-top-80">
+      <div class="text-center">
+        <span><qrcode version="5" error-correction-level="M" size="240" data="here comes qr!"></qrcode></span>
+      </div>
+    </div>
+  </div>
+</div>

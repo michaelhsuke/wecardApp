@@ -237,13 +237,39 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
     };
   })
   .controller('ContactDetailCtrl', ['$scope', '$stateParams', 'Chats', '$state', '$ionicModal', function ($scope, $stateParams, Chats, $state, $ionicModal) {
+    // 展示用户二维码功能
+    /**
+     * begin 展示用户二维码功能
+     */
+    $ionicModal.fromTemplateUrl('templates/qrcode-modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }). then(function(modal) {
+      $scope.qrcodeModal = modal;
+    });
 
+    $scope.openQRCodeModal = function() {
+      $scope.qrcodeModal.show();
+    };
+
+    $scope.closeQRCodeModal = function() {
+      $scope.qrcodeModal.hide();
+    };
+
+    /**
+     * end 展示用户二维码功能
+     */
+
+    /**
+     * begin 添加评论功能
+     */
     $ionicModal.fromTemplateUrl('templates/add-comment-modal.html', {
       scope: $scope,
       animation: 'slide-in-up'
     }).then(function(modal) {
       $scope.addCommentModal = modal;
     });
+
     // 添加评论功能
     $scope.openAddCommentModal = function() {
       $scope.addCommentModal.show();
@@ -252,6 +278,9 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
     $scope.closeAddCommentModal = function() {
       $scope.addCommentModal.hide();
     };
+    /**
+     * end 添加评论功能
+     */
 
     $scope.chat = Chats.get($stateParams.chatId);
 

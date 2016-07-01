@@ -4,7 +4,7 @@
     <h1 class="title">{{chat.name}}</h1>
   </ion-header-bar>
   <ion-content>
-    <p class="padding detail-qrcode"><button class="button button-clear"><i class="icon ion-ios-eye" aria-hidden="true"></i>&nbsp;Ta的二维码</button> </p>
+    <p class="padding detail-qrcode"><button class="button button-clear" ng-click="openQRCodeModal()"><i class="icon ion-ios-eye" aria-hidden="true"></i>&nbsp;Ta的二维码</button></p>
     <!--头像-->
     <div class="card text-center">
       <div class="contact-avatar">
@@ -20,7 +20,6 @@
           我来评价
         </button>
       </div>
-
     </div>
 
     <!--联系方式-->

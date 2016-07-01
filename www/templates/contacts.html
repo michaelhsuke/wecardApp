@@ -1,15 +1,15 @@
 <ion-view hide-nav-bar="true">
   <ion-header-bar align-title="center" class="bar-dark">
-    <button class="button button-clear" ng-click="scanQRCode()">扫一扫</button>
+    <button class="button button-clear button-custom" ng-click="scanQRCode()">扫一扫</button>
     <h1 class="title">联系人</h1>
-    <button class="button button-clear icon ion-ios-plus-empty" ng-click="openPopover($event)">&nbsp;&nbsp;</button>
+    <button class="button button-clear button-custom" ng-click="openPopover($event)">查找</button>
   </ion-header-bar>
 
   <ion-content>
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="搜索联系人" id="filter_name" ng-model="filterName">
+        <input type="text" placeholder="搜索我的联系人" id="filter_name" ng-model="filterName">
       </label>
     </div>
     <div class="list padding">

@@ -863,6 +863,12 @@ canvas {
   height: 50px !important;
   border-radius: 50% !important;
 }
-
 /*end: fixed position demo*/
 
+.margin-top-80 {
+  margin-top: 80px!important;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px!important;
+}
