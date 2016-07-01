@@ -396,7 +396,37 @@ angular.module('starter.controllers', ['monospaced.qrcode'])
   .controller('CommentUserCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
     $scope.back = function() {
       $ionicHistory.goBack();
-    }
+    };
+
+    // 关于用户的评论
+    $scope.comments = [
+      {
+        id: 1,
+        content: '张三是个不错的小伙',
+        from_user_id: '-1',
+        from_user_name: '匿名',
+        upvote_num: 112,
+        downvote_num: 1,
+        date: '2015-07-01 8:00'
+
+      }, {
+        id: 2,
+        content: '画面左侧的Soylent卡车：Soylent号称是让geek们放弃吃饭的营养冲剂，2015年公司估值为1亿美元画面右侧的紫色巴士是雅虎用来接送员工的，在第二季（2015年）片头里你会发现有一些小人儿在巴士旁举着标语牌示威，事情是这样的：因为google和雅虎等科技公司的巴士专门搭载员工往返于硅谷和旧金山以及奥克兰之间，部分人认为这种私人企业的专有交通工具将会造成沿途站点地区和房价的中产化并导致原有居民被迫迁居，因而常常堵塞巴士进行抗议。',
+        from_user_id: -1,
+        from_user_name: '匿名',
+        upvote_num: 10,
+        downvote_num: '1.3K',
+        date: '2015-12-13 9:00'
+      }, {
+        id: 3,
+        content: '《矽谷群瞎传》全剧拍摄于洛杉矶和帕罗奥图市，演员阵容包括Thomas Middleditch、TJ Miller、Zach Woods、Kumail Nanjiani、Martin Starr、Josh Brener、Christopher Evan Welch，以及Amanda Crew。Tom Lassally和Scott Rudin将出任执行制作。本部戏是由Judge、Altschuler，以及 Krinsky所创作。',
+        from_user_id: 1003,
+        from_user_name: '李四',
+        upvote_num: '270K',
+        downvote_num: '110K',
+        date: '2011-10-01 20:13'
+      }
+    ];
   }])
   .controller('AccountCtrl', function ($scope, $ionicModal, $ionicActionSheet, $state) {
     $scope.gotoPage = function (page) {
