@@ -818,3 +818,26 @@ canvas {
 .item-icon-left .fa {
   font-size: 24px;
 }
+
+
+
+.button .count {
+  /*border: 1px solid #f00;*/
+  display: inline-block;
+  position: relative;
+  padding-left: 12px;
+}
+
+.button .count:before {
+  width: 1px;
+  background: #efefef;
+  height: 14px;
+  position: absolute;
+  content: '';
+  top: 7px;
+  left:4px;
+}
+
+.button-downvoted .count:before {
+  background-color: #bcbcbc;
+}

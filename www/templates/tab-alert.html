@@ -7,7 +7,7 @@
     <ion-list>
       <div ng-repeat="alert in alerts">
         <ion-item class="item-icon-left" ng-class="{'assertive': alert.type == 1 && alert.status == 1, 'positive': alert.type == 2 && alert.status == 1}">
-          <i class="icon fa" ng-class="{'fa-exchange': alert.type == 1, 'fa-user': alert.type == 2, 'fa-building-o': alert.type == 3}"></i>
+          <i class="icon" ng-class="{'ion-arrow-swap': alert.type == 1, 'ion-ios-person': alert.type == 2, 'ion-cube': alert.type == 3}"></i>
           {{alert.title}}
         </ion-item>
       </div>
