@@ -1,0 +1,20 @@
+<div class="modal" ng-controller="ContactInfoCtrl">
+  <ion-header-bar class="bar bar-header bar-dark">
+    <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="closeAddCommentModal()"></button>
+    <h1 class="title">我对张三的评价</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list">
+      <div class="item edit-doc-item">
+        <div  class="profile-input-group">
+          <textarea type="text" ng-model="workItem.desc" class="profile-input" rows="5"> </textarea>
+          <span class="del-profile-input" ng-show="workItem.desc" ng-click="workItem.desc=''">&times;</span>
+        </div>
+      </div>
+      <br/>
+      <div class="text-center">
+        <button class="button button-positive button-block button-more-padding">发表</button>
+      </div>
+    </div>
+  </ion-content>
+</div>

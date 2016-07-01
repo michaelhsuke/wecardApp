@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['monospaced.qrcode'])
+angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'])
   .controller('HomeCtrl', function ($cordovaBarcodeScanner, $scope, Camera, QRScanService, $ionicModal, $ionicPopup, $timeout, $state) {
     console.log('show scope');
 
@@ -246,8 +246,11 @@ angular.module('starter.controllers', ['monospaced.qrcode'])
     });
     // 添加评论功能
     $scope.openAddCommentModal = function() {
-      alert('ok');
       $scope.addCommentModal.show();
+    };
+
+    $scope.closeAddCommentModal = function() {
+      $scope.addCommentModal.hide();
     };
 
     $scope.chat = Chats.get($stateParams.chatId);
