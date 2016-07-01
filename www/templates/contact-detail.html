@@ -42,9 +42,21 @@
         <strong><i class="icon ion-person"></i>&nbsp;基本资料</strong>
       </div>
 
-      <div class="item basic-info-item text-positive" ng-repeat="basicItem in contactInfo.basic">
-        <label class="">{{basicItem.title}}</label><span
-        class="font-sm font-gray">{{basicItem.val}}</span>
+      <div class="item basic-info-item text-positive" ng-show="contactInfo.basic.location">
+        <label class="">居住地</label>
+        <span class="font-sm font-gray">{{contactInfo.basic.location}}</span>
+      </div>
+      <div class="item basic-info-item text-positive" ng-show="contactInfo.basic.company">
+        <label class="">公司</label>
+        <a class="font-sm font-gray" ui-sref="tab.companyInfo">{{contactInfo.basic.company}}</a>
+      </div>
+      <div class="item basic-info-item text-positive" ng-show="contactInfo.basic.position">
+        <label class="">职位</label>
+        <span class="font-sm font-gray">{{contactInfo.basic.position}}</span>
+      </div>
+      <div class="item basic-info-item text-positive" ng-show="contactInfo.basic.field">
+        <label class="">行业</label>
+        <span class="font-sm font-gray">{{contactInfo.basic.field}}</span>
       </div>
     </div>
 

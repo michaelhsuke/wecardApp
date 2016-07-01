@@ -289,19 +289,12 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
       id: 1001,
       avatar: 'img/ben.png',
       name: '徐可',
-      basic: [{
-        'title': '居住地',
-        'val': '江苏南京'
-      }, {
-        'title': '公司',
-        'val': '三六五网络'
-      }, {
-        'title': '职位',
-        'val': '研发工程师'
-      }, {
-        'title': '行业',
-        'val': '计算机/互联网'
-      }],
+      basic: {
+        location: '江苏南京',
+        company: '三六五网络',
+        position: '研发工程师',
+        field: '计算机/互联网'
+      },
       intro: 'hello, where where',
       contacts: [
         {
@@ -459,6 +452,12 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
         date: '2011-10-01 20:13'
       }
     ];
+  }])
+  .controller('CompanyInfoCtrl', ['$scope', '$ionicHistory', function($scope, $ionicHistory) {
+    // 返回上一界面
+    $scope.back = function() {
+      $ionicHistory.goBack();
+    };
   }])
   .controller('AccountCtrl', function ($scope, $ionicModal, $ionicActionSheet, $state) {
     $scope.gotoPage = function (page) {

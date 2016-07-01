@@ -104,6 +104,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
+      .state('tab.companyInfo', {  // 公司信息
+        url: '/company',
+        views: {
+          'tab-contact': {
+            templateUrl: 'templates/company-info.html',
+            controller: 'CompanyInfoCtrl'
+          }
+        }
+      })
       .state('tab.account', {
         url: '/account',
         abstract: true,
