@@ -2,6 +2,7 @@
   <ion-header-bar align-title="center" class="bar-dark">
     <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="backContactList()"></button>
     <h1 class="title">{{chat.name}}</h1>
+    <button class="button button-clear button-custom" ng-click="">关注的企业</button>
   </ion-header-bar>
   <ion-content>
     <!--头像-->
@@ -46,9 +47,10 @@
         <label class="">居住地</label>
         <span class="font-sm font-gray">{{contactInfo.basic.location}}</span>
       </div>
-      <div class="item basic-info-item text-positive" ng-show="contactInfo.basic.company">
+      <div class="item basic-info-item text-positive item-icon-right" ui-sref="tab.companyInfo" ng-show="contactInfo.basic.company">
         <label class="">公司</label>
-        <a class="font-sm font-gray" ui-sref="tab.companyInfo">{{contactInfo.basic.company}}</a>
+        <span class="font-sm font-gray" >{{contactInfo.basic.company}}</span>
+        <i class="icon ion-chevron-right icon-accessory"></i>
       </div>
       <div class="item basic-info-item text-positive" ng-show="contactInfo.basic.position">
         <label class="">职位</label>
@@ -61,8 +63,7 @@
     </div>
 
     <div class="item no-border">
-      <a class="button button-block button-balanced icon ion-document-text"
-         href="#/tab/contact/{{chat.id}}/document">
+      <a class="button button-block button-balanced icon ion-document-text" ui-sref="tab.contactDocument.list({chatId: 0})">
         &nbsp;查看档案
       </a>
     </div>

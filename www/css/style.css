@@ -831,7 +831,7 @@ canvas {
 .button .count:before {
   width: 1px;
   background: #efefef;
-  height: 14px;
+  height: 12px;
   position: absolute;
   content: '';
   top: 7px;
@@ -871,4 +871,16 @@ canvas {
 
 .margin-bottom-20 {
   margin-bottom: 20px!important;
+}
+
+.clickable-text {
+    color: #0c60ee;
+}
+
+.work .company-name {
+    margin-top: 3px;
+}
+
+.button-post {
+    min-width: 160px;
 }

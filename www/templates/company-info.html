@@ -2,6 +2,7 @@
   <ion-header-bar align-title="center" class="bar-dark">
     <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="back()"></button>
     <h1 class="title">锤子科技</h1>
+    <button class="button button-clear button-custom" ng-click="">查看关注者</button>
   </ion-header-bar>
 
   <ion-content class="padding">
@@ -11,10 +12,12 @@
           <button class="button button-clear" ng-click="openQRCodeModal()"><i class="icon ion-ios-eye" aria-hidden="true"></i>&nbsp;企业二维码</button>
         </div>
         <div class="body text-center">
+
           <div class="company-avatar">
             <img src="img/t.jpg" width="180px" alt="锤子科技"/>
           </div>
           <h3>锤子科技</h3>
+          <p class=""><i class="energized icon ion-star" style="font-size: 18px;">&nbsp;</i><strong>8.0</strong></p>
           <p>一家制造移动互联网终端设备的公司</p>
         </div>
         <div class="footer">
@@ -41,5 +44,14 @@
       <h3>公司工商信息</h3>
       <h3>公司的联系信息</h3>
     </ion-list>
+
+    <p>
+      <button class="button button-small button-royal button-more-padding margin-right-5" ng-click="">
+        <i class="icon ion-image">&nbsp;编辑LOGO</i>
+      </button>
+      <button class="button button-small button-more-padding" ng-click="">
+        <i class="icon ion-compose">&nbsp;编辑信息</i>
+      </button>
+    </p>
   </ion-content>
 </ion-view>
