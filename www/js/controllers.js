@@ -363,6 +363,9 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
         //alert('world');
       };
     }])
+    .controller('ContactSearchCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
+      console.log('search ok');
+    }])
     .controller('AlertCtrl', ['$scope', function ($scope) {
       // 信息列表
       // type = {1: 交换名片, 2: 评论用户, 3: 评论企业}

@@ -86,6 +86,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             templateUrl: 'templates/contact-add.html',
             controller: 'ContactAddFormCtrl'
           })
+          .state('tab.contact.search', {
+            url: '/search',
+            templateUrl: 'templates/contact-search.html',
+            controller: 'ContactSearchCtrl'
+          })
           .state('tab.contactDocument', { // 联系人页签
             url: '/doc',
             abstract: true,
