@@ -365,6 +365,9 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
     }])
     .controller('ContactSearchCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
       console.log('search ok');
+      $scope.back = function() {
+        $ionicHistory.goBack();
+      };
     }])
     .controller('AlertCtrl', ['$scope', function ($scope) {
       // 信息列表
