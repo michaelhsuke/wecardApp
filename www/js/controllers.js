@@ -236,7 +236,7 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
         Chats.remove(chat);
       };
     })
-    .controller('ContactDetailCtrl', ['$scope', '$stateParams', 'Chats', '$state', '$ionicModal', function ($scope, $stateParams, Chats, $state, $ionicModal) {
+    .controller('ContactDetailCtrl', ['$scope', '$stateParams', 'Chats', '$state', '$ionicModal', '$ionicHistory', function ($scope, $stateParams, Chats, $state, $ionicModal, $ionicHistory) {
       // 展示用户二维码功能
       /**
        * begin 展示用户二维码功能
@@ -282,6 +282,12 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
        * end 添加评论功能
        */
 
+      // 完成用户评价
+      $scope.postCommentOnUser = function() {
+        $scope.addCommentModal.hide();
+        $state.go('tab.commentUser');
+      };
+
       $scope.chat = Chats.get($stateParams.chatId);
 
       // 联系人信息
@@ -321,6 +327,10 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
         ]
       };
 
+      $scope.back = function() {
+        $ionicHistory.goBack();
+      };
+
       $scope.backContactList = function () {
         $state.go('tab.contact.list');
       };
@@ -329,6 +339,16 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
         alert('good');
         var ref = cordova.InAppBrowser.open('http://weibo.com', '_system', 'location=yes');
         alert(ref);
+      };
+    }])
+    .controller('FollowCompaniesCtrl', ['$scope', '$ionicHistory', function($scope, $ionicHistory) {
+      $scope.back = function() {
+        $ionicHistory.goBack();
+      };
+    }])
+    .controller('FollowContactsCtrl', ['$scope', '$ionicHistory', function($scope, $ionicHistory) {
+      $scope.back = function() {
+        $ionicHistory.goBack();
       };
     }])
     .controller('ContactDocumentCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {

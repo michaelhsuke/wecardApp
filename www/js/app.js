@@ -81,6 +81,34 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             templateUrl: 'templates/contact-detail.html',
             controller: 'ContactDetailCtrl'
           })
+          .state('tab.followContacts', {
+            url: '/follow-contacts',
+            abstract: true,
+            views: {
+              'tab-contact': {
+                template: '<ion-nav-view></ion-nav-view>'
+              }
+            }
+          })
+          .state('tab.followContacts.list', {
+            url: '',
+            templateUrl: 'templates/follow-contacts.html',
+            controller: 'FollowContactsCtrl'
+          })
+          .state('tab.followCompanies', {
+            url: '/follow-companies',
+            abstract: true,
+            views: {
+              'tab-contact': {
+                template: '<ion-nav-view></ion-nav-view>'
+              }
+            }
+          })
+          .state('tab.followCompanies.list', {
+            url: '',
+            templateUrl: 'templates/follow-companies.html',
+            controller: 'FollowCompaniesCtrl'
+          })
           .state('tab.contact.add', {
             url: '/contact/add',
             templateUrl: 'templates/contact-add.html',
