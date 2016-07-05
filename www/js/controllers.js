@@ -255,7 +255,6 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
       $scope.closeQRCodeModal = function () {
         $scope.qrcodeModal.hide();
       };
-
       /**
        * end 展示用户二维码功能
        */
@@ -529,6 +528,27 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
       };
       /**
        * end 添加评论功能
+       */
+
+      /**
+       * begin 展示用户二维码功能
+       */
+      $ionicModal.fromTemplateUrl('templates/qrcode-modal.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function (modal) {
+        $scope.qrcodeModal = modal;
+      });
+
+      $scope.openQRCodeModal = function () {
+        $scope.qrcodeModal.show();
+      };
+
+      $scope.closeQRCodeModal = function () {
+        $scope.qrcodeModal.hide();
+      };
+      /**
+       * end 展示用户二维码功能
        */
 
     }])
