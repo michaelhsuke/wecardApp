@@ -885,4 +885,5 @@ canvas {
 .button-post {
   padding: 5px 0;
   min-width: 160px;
+  font-size: 14px;
 }
