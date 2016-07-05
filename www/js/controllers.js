@@ -481,11 +481,56 @@ angular.module('starter.controllers', ['monospaced.qrcode', 'monospaced.elastic'
         }
       ];
     }])
-    .controller('CompanyInfoCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
+    .controller('CompanyInfoCtrl', ['$scope', '$ionicHistory', '$ionicModal', function ($scope, $ionicHistory, $ionicModal) {
       // 返回上一界面
       $scope.back = function () {
         $ionicHistory.goBack();
       };
+
+      /**
+       * begin 评论列表
+       */
+      $ionicModal.fromTemplateUrl('templates/comment-company-modal.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function (modal) {
+        $scope.commentListModal = modal;
+      });
+
+      // 添加评论功能
+      $scope.openCommentListModal = function () {
+        $scope.commentListModal.show();
+      };
+
+      $scope.closeCommentListModal = function () {
+        $scope.commentListModal.hide();
+      };
+      /**
+       * end 评论列表
+       */
+
+      /**
+       * begin 添加评论功能
+       */
+      $ionicModal.fromTemplateUrl('templates/add-comment-modal.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function (modal) {
+        $scope.addCommentModal = modal;
+      });
+
+      // 添加评论功能
+      $scope.openAddCommentModal = function () {
+        $scope.addCommentModal.show();
+      };
+
+      $scope.closeAddCommentModal = function () {
+        $scope.addCommentModal.hide();
+      };
+      /**
+       * end 添加评论功能
+       */
+
     }])
     .controller('AccountCtrl', function ($scope, $ionicModal, $ionicActionSheet, $state) {
       $scope.gotoPage = function (page) {

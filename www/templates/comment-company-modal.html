@@ -1,0 +1,28 @@
+<ion-view class="modal">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button button-clear icon ion-ios-arrow-back button-custom" ng-click="closeCommentListModal()"></button>
+    <h1 class="title">大家对锤子科技的评价</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+    <div class="text-right margin-bottom-20">
+      <button class="button button-clear button-small"><i class="icon ion-thumbsup">&nbsp;</i>按赞同数排序</button>
+      <button class="button button-clear button-small"><i class="icon ion-ios-clock-outline">&nbsp;</i>按时间排序</button>
+    </div>
+    <ion-list>
+      <ion-item class="item-body" ng-repeat="comment in comments">
+        <p>{{comment.date}}</p>
+        <p>{{comment.content}}</p>
+        <p>
+          <a href="#" class="button button-small button-positive button-more-padding button-upvote margin-right-5">
+            赞同
+            <span class="count">{{comment.upvote_num}}</span>
+          </a>
+          <a href="#" class="button button-small button-more-padding button-downvoted">不赞同
+            <span class="count">{{comment.downvote_num}}</span>
+          </a>
+        </p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
